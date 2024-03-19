@@ -1,5 +1,4 @@
-﻿
-namespace VictorKrogh.Disposable;
+﻿namespace VictorKrogh;
 
 public abstract class UnmanagedDisposable : Disposable
 {

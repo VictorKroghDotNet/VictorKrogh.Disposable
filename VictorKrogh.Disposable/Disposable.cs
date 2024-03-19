@@ -1,5 +1,4 @@
-﻿
-namespace VictorKrogh.Disposable;
+﻿namespace VictorKrogh;
 
 public abstract class Disposable : IDisposable, IAsyncDisposable
 {
@@ -25,7 +24,7 @@ public abstract class Disposable : IDisposable, IAsyncDisposable
             throw new ObjectDisposedException($"'{GetType().FullName}' has already been disposed!");
         }
 
-        if(disposing)
+        if (disposing)
         {
             DisposeManagedState();
         }
