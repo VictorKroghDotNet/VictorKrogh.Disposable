@@ -1,9 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>VictorKrogh.Disposable</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<BuildNumber Condition="'$(BuildNumber)' == ''">0</BuildNumber>
+		<PackageVersion>8.0.$(BuildNumber)-dev-build</PackageVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<BuildNumber Condition="'$(BuildNumber)' == ''">0</BuildNumber>
+		<PackageVersion>8.0.$(BuildNumber)</PackageVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageProjectUrl>https://github.com/VictorKroghDotNet/VictorKrogh.Data</PackageProjectUrl>
+	</PropertyGroup>
 
 </Project>
