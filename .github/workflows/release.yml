@@ -38,7 +38,7 @@ jobs:
       run: dotnet pack --configuration ${{ env.configuration }} /p:Version=${VERSION} --no-build --output 
       
     - name: Upload Build Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ env.csproj_name }}
         path: "${{ env.csproj_name }}/bin/${{ env.configuration }}/*.nupkg"
@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Download NuGet Package Artifact
-        uses: actions/download-artifact@v3.0.2
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.csproj_name }}
           path: artifact
