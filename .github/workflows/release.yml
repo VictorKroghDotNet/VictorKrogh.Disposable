@@ -55,7 +55,7 @@ jobs:
           path: artifact
 
       - name: Push
-        run: dotnet nuget push "artifact/*.nupkg" --source https://nuget.pkg.github.com/VictorKroghDotNet/index.json --api-key ${NUGET_TOKEN} --skip-duplicate
+        run: dotnet nuget push "artifact/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${NUGET_TOKEN} --skip-duplicate
         env:
             NUGET_TOKEN: ${{ secrets.NUGET_API_KEY }}
   
